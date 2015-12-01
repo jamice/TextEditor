@@ -10,6 +10,15 @@
             <items>
                 <MenuItem text="New" />
             </items>
+            <items>
+                <MenuItem text="Open" />
+            </items>
+            <items>
+                <MenuItem text="Save" />
+            </items>
+            <items>
+                <MenuItem text="Save As" />
+            </items>
         </Menu>
         <Menu text="Options">
             <items>
@@ -17,11 +26,6 @@
             </items>
         </Menu>
         <Menu text="About">
-            <items>
-                <MenuItem text="New" />
-            </items>
-        </Menu>
-        <Menu text="Help">
             <items>
                 <MenuItem text="New" />
             </items>
