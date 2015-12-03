@@ -1,15 +1,19 @@
 package textEditor.view;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 import textEditor.MainApp;
 
 /**
  * Created by Robert Deignan on 03/12/15.
  * robert.deignan@outlook.com
  */
-public class RootLayoutContoller {
+public class RootLayoutController {
     // Reference back to mainApp for access to public methods
     MainApp mainApp;
+
+    public void initialize() {
+    }
 
 
     /**
@@ -17,6 +21,16 @@ public class RootLayoutContoller {
      */
     @FXML
     public void handleClear() {
+        mainApp.getMainTextAreaController().getTextArea().clear();
+    }
+
+
+    /**
+     * Exits the application.
+     */
+    @FXML
+    public void handleExit() {
+        System.exit(0);
     }
 
 

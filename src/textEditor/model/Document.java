@@ -14,8 +14,7 @@ public class Document {
     public Document() {
         text = "Default string.";
     }
-
-    // test branch
+    
 
     /**
      * Constructor

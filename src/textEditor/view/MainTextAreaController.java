@@ -21,7 +21,8 @@ public class MainTextAreaController {
     /**
      * Called automatically after the fxml file has been loaded.
      */
-    private void initialize() {
+    public void initialize() {
+        textArea.setText(doc.getText());
     }
 
 
@@ -30,6 +31,9 @@ public class MainTextAreaController {
      */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
-        textArea.setText(doc.getText());
+    }
+
+    public TextArea getTextArea() {
+        return textArea;
     }
 }
