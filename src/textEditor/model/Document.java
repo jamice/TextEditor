@@ -7,7 +7,6 @@ package textEditor.model;
 public class Document {
     private String currentText = "default string.";
 
-
     public String getCurrentText() {
         return currentText;
     }
