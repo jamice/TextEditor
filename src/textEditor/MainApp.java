@@ -3,10 +3,10 @@ package textEditor;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import textEditor.model.Document;
 import textEditor.view.MainTextAreaController;
 
 import java.io.IOException;
@@ -14,7 +14,6 @@ import java.io.IOException;
 public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
-    private Document doc = new Document();
 
     /**
      * Constructor
@@ -71,8 +70,4 @@ public class MainApp extends Application {
     }
 
     public static void main(String[] args) { launch(args); }
-
-    public Document getDoc() {
-        return this.doc;
-    }
 }

@@ -5,13 +5,34 @@ package textEditor.model;
  * robert.deignan@outlook.com
  */
 public class Document {
-    private String currentText = "default string.";
+    private String text;
 
-    public String getCurrentText() {
-        return currentText;
+
+    /**
+     * Default constructor, sets text to a default string
+     */
+    public Document() {
+        text = "Default string.";
     }
 
-    public void setCurrentText(String currentText) {
-        this.currentText = currentText;
+
+    /**
+     * Constructor
+     * @param text String that will be assigned to the text variable.
+     */
+    public Document(String text) {
+        this.setText(text);
+    }
+
+
+    /**
+     * Getters and setters.
+     */
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String currentText) {
+        this.text = currentText;
     }
 }

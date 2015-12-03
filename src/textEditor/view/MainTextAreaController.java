@@ -14,7 +14,7 @@ public class MainTextAreaController {
     MainApp mainApp;
 
     @FXML
-    private Document doc;
+    private Document doc = new Document();
     @FXML
     private TextArea textArea;
 
@@ -30,7 +30,6 @@ public class MainTextAreaController {
      */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
-        doc = mainApp.getDoc();
-        textArea.setText(doc.getCurrentText());
+        textArea.setText(doc.getText());
     }
 }
