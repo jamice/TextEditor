@@ -1,5 +1,9 @@
 package textEditor.model;
 
+import textEditor.util.FileTools;
+
+import java.io.File;
+
 /**
  * Created by Robert Deignan on 02/12/15.
  * robert.deignan@outlook.com
@@ -28,8 +32,8 @@ public class Document {
     /**
      * Returns a new document
      */
-    public static Document open() {
-        return new Document("new doc");
+    public static Document open(File file) {
+        return new Document(FileTools.loadTextToString(file));
     }
 
 

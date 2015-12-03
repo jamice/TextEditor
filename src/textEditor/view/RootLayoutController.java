@@ -2,8 +2,12 @@ package textEditor.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import textEditor.MainApp;
 import textEditor.model.Document;
+
+import java.io.File;
 
 /**
  * Created by Robert Deignan on 03/12/15.
@@ -31,7 +35,11 @@ public class RootLayoutController {
      */
     @FXML
     public void handleOpen() {
-        mainApp.getMainTextAreaController().setDoc(Document.open());
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Open File");
+        File file = chooser.showOpenDialog(new Stage());
+
+        mainApp.getMainTextAreaController().setDoc(Document.open(file));
         mainApp.getMainTextAreaController().updateText();
     }
 

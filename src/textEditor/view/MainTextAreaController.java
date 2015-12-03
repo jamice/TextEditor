@@ -21,7 +21,7 @@ public class MainTextAreaController {
      * Called automatically after the fxml file has been loaded.
      */
     public void initialize() {
-        textArea.setText(doc.getText());
+        updateText();
     }
 
 
