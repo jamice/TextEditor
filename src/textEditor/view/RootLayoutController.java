@@ -3,6 +3,7 @@ package textEditor.view;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import textEditor.MainApp;
+import textEditor.model.Document;
 
 /**
  * Created by Robert Deignan on 03/12/15.
@@ -26,6 +27,16 @@ public class RootLayoutController {
 
 
     /**
+     * Open and display a document
+     */
+    @FXML
+    public void handleOpen() {
+        mainApp.getMainTextAreaController().setDoc(Document.open());
+        mainApp.getMainTextAreaController().updateText();
+    }
+
+
+    /**
      * Exits the application.
      */
     @FXML
@@ -35,7 +46,7 @@ public class RootLayoutController {
 
 
     /**
-     * Callled by the main application to give a reference back to itself
+     * Called by the main application to give a reference back to itself
      *
      * @param mainApp The main application class
      */

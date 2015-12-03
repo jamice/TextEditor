@@ -17,11 +17,6 @@ public class MainApp extends Application {
     private MainTextAreaController mainTextAreaController;
     private RootLayoutController rootLayoutController;
 
-    /**
-     * Constructor
-     */
-    public MainApp() { }
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
@@ -49,6 +44,7 @@ public class MainApp extends Application {
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

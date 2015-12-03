@@ -26,6 +26,14 @@ public class Document {
 
 
     /**
+     * Returns a new document
+     */
+    public static Document open() {
+        return new Document("new doc");
+    }
+
+
+    /**
      * Getters and setters.
      */
     public String getText() {

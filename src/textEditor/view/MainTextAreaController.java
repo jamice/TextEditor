@@ -13,7 +13,6 @@ public class MainTextAreaController {
     // Reference back to mainApp for access to public methods
     MainApp mainApp;
 
-    @FXML
     private Document doc = new Document();
     @FXML
     private TextArea textArea;
@@ -26,7 +25,15 @@ public class MainTextAreaController {
     }
 
 
-    /** Callled by the main application to give a reference back to itself
+    /**
+     * Updates the text area to show the current contents of the document
+     */
+    public void updateText() {
+        textArea.setText(doc.getText());
+    }
+
+
+    /** Called by the main application to give a reference back to itself
      * @param mainApp The main application class
      */
     public void setMainApp(MainApp mainApp) {
@@ -35,5 +42,13 @@ public class MainTextAreaController {
 
     public TextArea getTextArea() {
         return textArea;
+    }
+
+    public Document getDoc() {
+        return doc;
+    }
+
+    public void setDoc(Document doc) {
+        this.doc = doc;
     }
 }
