@@ -36,7 +36,6 @@ public class Document {
         return new Document(FileTools.fileToString(file));
     }
 
-
     /**
      * Getters and setters.
      */
