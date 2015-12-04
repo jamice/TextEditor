@@ -1,7 +1,6 @@
 package textEditor.view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
@@ -40,11 +39,10 @@ public class RootLayoutController {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Open File");
         File file = chooser.showOpenDialog(new Stage());
+        Document newDoc = Document.openDoc(file);
 
-        // Prevents the document being cleared if the open dialog box is opened
-        // then closed without selecting a file
-        if (file != null) {
-            mainApp.getMainTextAreaController().setDoc(Document.open(file));
+        if (newDoc != null) {
+            mainApp.getMainTextAreaController().setDoc(newDoc);
             mainApp.getMainTextAreaController().updateText();
         }
     }
@@ -59,14 +57,11 @@ public class RootLayoutController {
         chooser.setTitle("Save File");
         File file = chooser.showSaveDialog(new Stage());
 
-        try {
-            if (file != null) {
-                FileUtils.writeStringToFile(
-                        file,
-                        mainApp.getMainTextAreaController().getDoc().getText());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (file != null) {
+            // Update the documents text with text area contents before save
+            mainApp.getMainTextAreaController().getDoc().setText(
+                    mainApp.getMainTextAreaController().getTextArea().getText());
+            mainApp.getMainTextAreaController().getDoc().saveDoc(file);
         }
     }
 

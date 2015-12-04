@@ -1,8 +1,12 @@
 package textEditor.model;
 
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import org.apache.commons.io.FileUtils;
 import textEditor.util.FileTools;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by Robert Deignan on 02/12/15.
@@ -30,10 +34,28 @@ public class Document {
 
 
     /**
-     * Returns a new document
+     * Returns a new document, returns null if no file selected.
      */
-    public static Document open(File file) {
-        return new Document(FileTools.fileToString(file));
+    public static Document openDoc(File file) {
+
+        if (file != null) {
+            return new Document(FileTools.fileToString(file));
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Saves a document to file
+     */
+    public void saveDoc(File file) {
+        if (file != null) {
+            try {
+                FileUtils.writeStringToFile(file, this.getText());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
