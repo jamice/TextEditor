@@ -38,6 +38,7 @@ public class MainTextAreaController {
      */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
+        mainApp.getPrimaryStage().setTitle(doc.getFileName());
     }
 
     public TextArea getTextArea() {

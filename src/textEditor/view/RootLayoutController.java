@@ -44,6 +44,7 @@ public class RootLayoutController {
         if (newDoc != null) {
             mainApp.getMainTextAreaController().setDoc(newDoc);
             mainApp.getMainTextAreaController().updateText();
+            mainApp.getPrimaryStage().setTitle(newDoc.getFileName());
         }
     }
 

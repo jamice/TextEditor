@@ -76,4 +76,8 @@ public class MainApp extends Application {
     public MainTextAreaController getMainTextAreaController() {
         return mainTextAreaController;
     }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
 }
