@@ -33,7 +33,7 @@ public class Document {
      * Returns a new document
      */
     public static Document open(File file) {
-        return new Document(FileTools.loadTextToString(file));
+        return new Document(FileTools.fileToString(file));
     }
 
 

@@ -12,13 +12,12 @@ import java.io.IOException;
 public class FileTools {
 
     /**
-     * Returns a string containing the text read from the file a the location
-     * passed to the method.
+     * Returns a string containing the text read from the file.
      *
      * @param file file to be read to a string
      * @return A string containing the text from the specified file
      */
-    public static String loadTextToString(File file) {
+    public static String fileToString(File file) {
         String str;
         try {
             str = FileUtils.readFileToString(file);
