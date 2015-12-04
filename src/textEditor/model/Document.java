@@ -1,7 +1,5 @@
 package textEditor.model;
 
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 import textEditor.util.FileTools;
 

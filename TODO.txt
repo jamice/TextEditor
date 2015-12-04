@@ -1,0 +1,4 @@
+Extend document model with document name:
+    - display name as window title.
+    - update constructor with default name "title".
+    - use name when saving ti file.
